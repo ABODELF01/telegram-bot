@@ -15,7 +15,17 @@ logger.setLevel(logging.DEBUG)
 @bot.message_handler(commands=['start'])
 def boten(message):
 	
-    
+    $Alsh = "5005901260:AAHMJ660p-AXp2FUH8BMyZHUCl3GZ1c9pRw"; #توكن البوت الرفعته ادمن
+$ali = "porn691"; #معرف قناتك
+$join = file_get_contents("https://api.telegram.org/bot".$Alsh."/getChatMember?chat_id=$ali&user_id=".$from_id);
+if($message && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
+bot('sendMessage',['chat_id'=>$chat_id,
+'text'=>"
+اهلٱ عزيزي ، ٱشترك في قناة البوت
+قناة البوت - $ali 
+• بـعـدَ الاشتراك  الضغط • */start • ",
+]);return false;}
+
     
     mas = types.InlineKeyboardMarkup(row_width=2)
     
